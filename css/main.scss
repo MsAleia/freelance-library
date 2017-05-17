@@ -1,0 +1,463 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's global styles
+   ========================================================================== */
+
+// Colors
+$background-color: #F3F3F3;
+$font-color: #222222;
+
+
+$main-color: #104440;
+$secondary-color: #2EC4B6;
+$accent-dark: #283044;
+$accent-light: #78A1BB;
+
+
+// Fonts
+
+@mixin font-display{ 
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+@mixin font-body{
+  font-family: 'Montserrat';
+  font-weight: 100;
+}
+
+$font-regular: 'Montserrat';
+
+button{
+  background-color: $accent-light;
+  text-transform: uppercase;
+  font-weight: 400;
+  border: none;
+  width: 50%;
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  a{
+    color: $background-color;
+  }
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+// li{
+//     display: inline;
+// }
+
+a{
+    text-decoration: none;
+}
+
+img{
+  width: 100%;
+}
+
+// figure, p, ul{
+//   margin: 0;
+// }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html{
+    height: 100%;
+}
+
+body{
+    background-color: $background-color;
+    @include font-body;
+    font-size: 16px;
+    color: $font-color;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap column;
+}
+
+header,
+#main-wrapper{
+  max-width: 1200px;
+}
+
+header{
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  // background-color: red;
+  .header-wrapper{
+    width: 90%;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding: 5% 0;
+    // background-color: yellow;
+    #logo{
+      // background-color: purple;
+      margin-bottom: 2.5%;
+    }
+    nav{
+      a:visited{
+        color: $main-color;
+      }
+      // background-color: orange;
+      ul{
+        // background-color: pink;
+      }
+      li{
+        display: block;
+        text-align: center;
+        color: $main-color;
+        font-weight: 400;
+        text-transform: uppercase;
+        a{
+        color: $main-color;
+
+        }
+      }
+      .ul-spacer{
+        display: none;
+      }
+    }
+  }
+}
+
+#main-wrapper{
+  width: 100%;
+}
+
+aside{
+  // background-color: orange;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  padding: 2.5% 0;
+  #aside-content{
+    width: 90%;
+  h1{
+    margin-top: 0;
+  }
+  #fl-title-card{
+    @include font-display;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+}
+.adverts{
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  #community{
+    display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  }
+}
+}
+.aside-spacer{
+  width: 90%;
+  height: 1px;
+  background-color: $accent-light;
+  margin: 20px 0;
+}
+
+main{
+  h2{
+    @include font-display;
+    text-transform: uppercase;
+    color: $main-color;
+    padding: 2.5% 0;
+  }
+  // background-color: green;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+  .resource-item{
+    // background-color: lightblue;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    // background-color: orange;
+    .ri-wrapper{
+      width: 95%;
+      padding: 2.5% 0;
+      .ri-content{
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column wrap;
+      p{
+        width: 60%;
+        // background-color: yellow;
+      }
+    }
+    }  
+  }
+}
+
+.ri-title{
+  @include font-display;
+  color: $main-color;
+  text-transform: uppercase;
+}
+/* ==========================================================================
+   Author's media queries
+   ========================================================================== */
+@media only screen and (min-width: 768px) {
+
+  header{
+  .header-wrapper{
+    justify-content: space-around;
+    flex-flow: row wrap;
+    #logo{
+      width: 30%;
+      margin-bottom: 0;
+    }
+    nav{
+      width: 50%;
+      ul{
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+      li{
+        display: inline;
+      }
+    }
+      .ul-spacer{
+        display: inline;
+      }
+    }
+  }
+}
+
+}
+
+@media only screen and (min-width: 940px) {
+
+button{
+  width: 100%
+}  
+
+#main-wrapper{
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+  #aside-content{
+    border-right: 1px solid $accent-light;
+  }
+
+aside{
+  width: 35%;
+  min-height: 800px;
+  #fl-title-card{
+   height: 65%; 
+  }
+.adverts{
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 97.5%;
+  margin-right: 2.5%;
+  height: 30%;
+  #community, #freelance-plan{
+    width: 50%;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+  }
+  #community{
+    // background-color: yellow;
+  }
+  #freelance-plan{
+    // background-color: green;
+  }
+}
+}
+
+main{
+  width: 60%;
+  .resource-item{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+  .ri-wrapper{
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    // background-color: red;
+    width: 90%;
+    .ri-image{
+      // background-color: pink;
+      width: 30%;
+    }
+    .ri-content{
+      // background-color: purple;
+      width: 65%;
+    }
+  }
+}
+}
+
+.aside-spacer{
+  width: 90%;
+  // margin: 0 5%;
+}
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
